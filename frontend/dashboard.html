@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ExpiryVault Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header>
+
+<h1>🛡️ ExpiryVault</h1>
+
+<div class="notification">
+
+    <button class="bell-btn" onclick="toggleNotifications()">
+        🔔 <span id="notificationCount">0</span>
+    </button>
+
+</div>
+
+<button id="darkModeBtn" onclick="toggleDarkMode()">
+    🌙 Dark Mode
+</button>
+
+<button class="logout-btn" onclick="logout()">
+Logout
+</button>
+<div id="notificationPanel" class="notification-panel">
+
+    <h3>Expiry Notifications</h3>
+
+    <div id="notificationList"></div>
+
+</div>
+<div class="welcome-banner">
+
+<h2>Welcome to ExpiryVault 👋</h2>
+
+<p>
+Manage inventory, monitor expiry dates, receive alerts,
+and export professional reports.
+</p>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="cards">
+
+<div class="stat-card">
+
+<h2 id="totalProducts">0</h2>
+
+<p>Total Products</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="expiredProducts">0</h2>
+
+<p>Expired</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="expiring7">0</h2>
+
+<p>Expiring in 7 Days</p>
+
+</div>
+<div class="stat-card">
+
+<h2 id="expiring30">0</h2>
+
+<p>Expiring in 30 Days</p>
+
+</div>
+
+</div>
+
+<div class="form-box">
+
+<h2>Add Product</h2>
+
+<br>
+
+<label>Product Name</label>
+
+<input
+id="product_name"
+placeholder="Enter Product Name">
+
+<label>Category</label>
+
+<input
+id="category"
+placeholder="Enter Category">
+
+<label>Quantity</label>
+
+<input
+id="quantity"
+type="number"
+placeholder="Enter Quantity">
+<label>Unit</label>
+
+<select id="unit">
+    <option value="kg">kg</option>
+    <option value="g">g</option>
+    <option value="L">L</option>
+    <option value="ml">ml</option>
+    <option value="Packets">Packets</option>
+    <option value="Pieces">Pieces</option>
+</select> <br> <br>
+
+<label>Manufacture Date</label>
+
+<input
+id="manufacture_date"
+type="date">
+
+<label>Expiry Date</labesl>
+
+<input
+id="expiry_date"
+type="date">
+
+<button onclick="addProduct()">
+Add Product
+</button>
+
+</div>
+
+<h2>🔍 Search Product</h2>
+
+<input
+id="searchBox"
+placeholder="Search Product..."
+onkeyup="searchProducts()">
+
+<br><br>
+<div id="alertBox"></div>
+
+<br>
+<h2>📂 Filter by Category</h2>
+
+<select id="categoryFilter" onchange="filterCategory()">
+    <option value="All">All Categories</option>
+</select>
+
+<br><br>
+<h2>📊 Category Summary</h2>
+
+<div id="categorySummary"></div>
+
+<br>
+<button onclick="downloadExcel()" class="download-btn">
+    📥 Download Excel
+</button>
+<button onclick="downloadPDF()">
+    📄 Export PDF
+</button>
+<br><br>
+<hr>
+
+<h2>📊 Inventory Analytics</h2>
+
+<div class="chart-container">
+
+    <canvas id="categoryChart"></canvas>
+
+</div>
+
+<br>
+
+<div class="chart-container">
+
+    <canvas id="statusChart"></canvas>
+
+</div>
+
+<hr>
+<h2>📦 Products</h2>
+
+<div id="productList"></div>
+
+</div>
+<hr>
+
+<h2>🤖 ExpiryVault AI Assistant</h2>
+
+<div class="ai-box">
+
+    <textarea
+        id="aiQuestion"
+        placeholder="Ask something like:
+Which products expire this week?
+Which product should I use first?"
+</textarea></textarea>
+<div class="ai-buttons">
+
+<button onclick="quickAI('Which products expire this week?')">
+Expiring This Week
+</button>
+
+<button onclick="quickAI('Which product should I use first?')">
+Use First
+</button>
+
+<button onclick="quickAI('How many products do I have?')">
+Total Products
+</button>
+
+<button onclick="quickAI('Show dairy products')">
+Dairy Products
+</button>
+
+</div>
+    ></textarea>
+
+    <button onclick="askAI()">
+        Ask AI
+    </button>
+
+    <div id="aiResponse"></div>
+
+</div>
+<script src="js/script.js"></script>
+</body>
+
+</html>
