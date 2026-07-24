@@ -1,4 +1,4 @@
-const API_URL = "https://expiryvault-backend.onrender.com";
+const API_URL = "https://digital-expiry-assisstance.onrender.com";
 
 let allProducts = [];
 
