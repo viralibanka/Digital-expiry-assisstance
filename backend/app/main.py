@@ -21,6 +21,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://digital-expiry-assisstance-1.onrender.com/login.html"
         "http://127.0.0.1:5500",
         "http://localhost:5500"
     ],
@@ -28,7 +29,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 app.include_router(auth_router)
 app.include_router(product_router)
 app.include_router(ai_router)
