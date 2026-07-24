@@ -10,8 +10,8 @@ async function login() {
     const password = document.getElementById("password").value;
 
     const formData = new URLSearchParams();
-    formData.append("username", email);
-    formData.append("password", password);
+    formData.append("username", email.trim());
+    formData.append("password", password.trim());
 
     try {
 
