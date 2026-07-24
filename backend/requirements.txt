@@ -32,3 +32,4 @@ uvicorn==0.51.0
 openai
 pydantic-settings
 openpyxl
+reportlab
