@@ -404,6 +404,7 @@ box-shadow:0 5px 15px rgba(0,0,0,.15);
 .signup-text{
     text-align:center;
     margin-top:20px;
+    margin-bottom:10px;
     font-size:15px;
     color:#666;
 }
@@ -411,15 +412,15 @@ box-shadow:0 5px 15px rgba(0,0,0,.15);
 .signup-btn{
     display:block;
     width:100%;
-    text-align:center;
-    margin-top:10px;
     padding:12px;
     background:#16a34a;
-    color:white;
+    color:#fff;
     text-decoration:none;
+    text-align:center;
     border-radius:8px;
+    font-size:16px;
     font-weight:bold;
-    transition:.3s;
+    margin-top:10px;
 }
 
 .signup-btn:hover{
