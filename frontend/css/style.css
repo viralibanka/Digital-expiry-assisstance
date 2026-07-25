@@ -401,7 +401,21 @@ box-shadow:0 5px 15px rgba(0,0,0,.15);
     color:white;
 
 }
+.signup-text{
+    text-align:center;
+    margin-top:20px;
+    font-size:15px;
+}
 
+.signup-text a{
+    color:#007bff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.signup-text a:hover{
+    text-decoration:underline;
+}
 /* Responsive */
 
 @media(max-width:768px){
@@ -432,21 +446,6 @@ header{
     padding:10px;
     border-radius:8px;
 
-}
-.signup-text{
-    text-align:center;
-    margin-top:20px;
-    font-size:15px;
-}
-
-.signup-text a{
-    color:#007bff;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.signup-text a:hover{
-    text-decoration:underline;
 }
 #aiResponse{
 
